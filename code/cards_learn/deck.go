@@ -11,6 +11,20 @@ type deck []string
 
 // now you can replace []string with a new deck type
 
+func newDeck() deck {
+	cards := deck{}
+
+	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
+
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
+	return cards
+}
+
 // define a function with a deck as receiver
 func (d deck) print() {
 	for i, card := range d {
