@@ -14,4 +14,14 @@ func main() {
 			fmt.Printf("%v is odd\n", x)
 		}
 	}
+
+	fmt.Println("\n\n", newRange(5))
+}
+
+func newRange(n int) []int {
+	res := []int{}
+	for x := 0; x < n; x++ {
+		res = append(res, x) // NOTE append is pass by value
+	}
+	return res
 }
